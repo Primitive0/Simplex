@@ -1,5 +1,6 @@
 {
-  "name": "simplex",
+  "name": "simplex-rest",
+  "description": "Simple and fast REST API Server",
   "version": "0.0.1",
   "main": "lib/index.js",
   "author": "primitive",
