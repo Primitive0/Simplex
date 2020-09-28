@@ -1,0 +1,10 @@
+{
+  "name": "simplex",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "author": "primitive",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "uWebSockets.js": "uNetworking/uWebSockets.js#v18.5.0"
+  }
+}
