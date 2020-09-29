@@ -1,5 +1,5 @@
 export type StringToStringMap = { [key: string]: string; };
-export type RequestDataType = 'json' | 'urlencoded' | undefined;
+export type RequestDataType = 'json' | 'urlencoded';
 export type UndefinedLike = undefined | null;
 
 export interface LoggerLike {
@@ -25,7 +25,7 @@ export class HttpRequest {
     query: StringToStringMap;
 
     get_raw_data(): Promise<string>;
-    get_data(type: RequestDataType): Promise<StringToStringMap>;
+    get_data(type: RequestDataType | undefined): Promise<StringToStringMap>;
 }
 
 export class HttpResponse {
