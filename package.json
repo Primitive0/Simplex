@@ -1,7 +1,11 @@
 {
   "name": "simplex-rest",
   "description": "Simple and fast REST API Server",
-  "version": "0.0.1",
+  "version": "0.0.1-1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Primitive0/simplex-rest-js.git"
+  },
   "main": "lib/index.js",
   "author": "primitive",
   "license": "Apache-2.0",
