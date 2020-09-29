@@ -2,6 +2,7 @@ import { HttpRequest, HttpResponse } from './http_request_util';
 
 
 export type StringToStringMap = { [key: string]: string; };
+export type StringToObjectMap = { [key: string]: any; };
 export type UndefinedLike = undefined | null;
 
 
@@ -27,6 +28,14 @@ export interface Router {
     any(path: string, handler: RequestHandler): void;
 }
 
+/**
+ * This is the way you can add routes in your API.
+ * @example
+ * //adds route on "/foo"
+ * router.get('/foo', (req, res) => {
+ *     res.write_all('Hello, world!');
+ * });
+ */
 export const router: Router;
 
 
@@ -45,6 +54,10 @@ export interface ServerParams {
     init: InitFunction | UndefinedLike;
 }
 
+/**
+ * Initializes and launches API server via params.
+ * @param params - Configuration of the server.
+ */
 export function Serv(params: ServerParams): void;
 
 
