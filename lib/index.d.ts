@@ -1,12 +1,9 @@
+import { HttpRequest, HttpResponse } from './http_request_util';
+
+
 export type StringToStringMap = { [key: string]: string; };
-export type RequestDataType = 'json' | 'urlencoded';
 export type UndefinedLike = undefined | null;
 
-export interface LoggerLike {
-    info(data: any): void;
-    warn(data: any): void;
-    error(data: any): void;
-}
 
 export interface CorsHandlerObject {
     response_cors_req(req: any, res: any): void;
@@ -16,31 +13,7 @@ export interface CorsHandlerObject {
 }
 
 
-export class HttpRequest {
-    constructor(nat_req: any, nat_res: any);
-
-    method: string;
-    path: string;
-    headers: StringToStringMap;
-    query: StringToStringMap;
-
-    get_raw_data(): Promise<string>;
-    get_data(type: RequestDataType | undefined): Promise<StringToStringMap>;
-}
-
-export class HttpResponse {
-    constructor(nat_res: any);
-
-    abort(): void;
-    cork(func: () => void): void;
-    status(status: number | string): void;
-    header(key: string, value: string): void;
-    end(): void;
-    write_all(data: any): void;
-}
-
 export type RequestHandler = (req: HttpRequest, res: HttpResponse) => void;
-
 
 export interface Router {
     get(path: string, handler: RequestHandler): void;
@@ -59,6 +32,12 @@ export const router: Router;
 
 export type InitFunction = () => Promise<void> | void;
 
+export interface LoggerLike {
+    info(data: any): void;
+    warn(data: any): void;
+    error(data: any): void;
+}
+
 export interface ServerParams {
     port: number;
     logging: LoggerLike | UndefinedLike;
@@ -66,11 +45,11 @@ export interface ServerParams {
     init: InitFunction | UndefinedLike;
 }
 
-export function Serv(params: ServerParams): void
+export function Serv(params: ServerParams): void;
 
 
 export interface SimplexUtil {
     default_cors_handler(allowed_methods: string, allowed_headers: string): CorsHandlerObject;
 }
 
-export const util: SimplexUtil
+export const util: SimplexUtil;
