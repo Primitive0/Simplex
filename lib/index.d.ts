@@ -48,8 +48,4 @@ export interface ServerParams {
 export function Serv(params: ServerParams): void;
 
 
-export interface SimplexUtil {
-    default_cors_handler(allowed_methods: string, allowed_headers: string): CorsHandlerObject;
-}
-
-export const util: SimplexUtil;
+export * as util from './util';
