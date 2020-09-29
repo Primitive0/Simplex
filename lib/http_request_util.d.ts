@@ -40,6 +40,14 @@ export function parse_request_data_auto(body: string, headers: StringToStringMap
  */
 export function serialize_data_for_http(data: any): string;
 
+/**
+ * Translates HTTP status code to its string presence.
+ * If cannot find the code, function converts it to string and returns.
+ * @param code - HTTP status code number.
+ * @returns HTTP status code string.
+*/
+export function get_status_from_code(code: number): string;
+
 
 export type RequestDataType = 'json' | 'urlencoded';
 
